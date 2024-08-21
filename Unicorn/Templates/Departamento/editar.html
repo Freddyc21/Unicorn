@@ -1,0 +1,20 @@
+{% load static %}
+{% include "header.html" %}
+<div class="container  mt-3">
+    <h4>Registre su Departamento en {{ empresa.Nombre }}</h4>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col">
+                {% for d in departamento%}
+                <input type="text" name="nombre" id="nombre" class="form-control" value="{{ d.Nombre }}">
+                {% endfor %}
+            </div>
+            <div class="col">
+                <button class="btn btn-primary">Guardar</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% include "footer.html" %}

@@ -1,0 +1,18 @@
+{% load static %}
+
+<script src='{% static "js/bootstrap.bundle.min.js" %}'></script>
+<script src='{% static "js/sweetalert.js" %}'></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var height = $(window).height();
+        var a = parseInt($(".breadcrumb-area").css('padding-top').replace("px", "")) + parseInt($(".breadcrumb-area").css('padding-bottom').replace("px", "")) + $('.breadcrumb-area').height();
+        var b = $('.dashboard_menu_area').height();
+        var c = parseInt($(".toggle_title").css('padding-top').replace("px", "")) + parseInt($(".toggle_title").css('padding-bottom').replace("px", "")) + $('.toggle_title').height();
+        var d = $('#nombre').height();
+        var header = a + b + c + d;
+        $('#full-v').height(height - header);
+    });
+</script>
+</body>
+
+</html>
